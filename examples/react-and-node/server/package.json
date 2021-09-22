@@ -1,0 +1,19 @@
+{
+  "name": "smartpay-sample-server-node-with-html",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Smartpay Solutions PTE. LTD.",
+  "license": "MIT",
+  "dependencies": {
+    "@smartpay/sdk-node": "^0.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
