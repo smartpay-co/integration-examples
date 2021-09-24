@@ -24,6 +24,8 @@ const checkout = () => {
     // Callback URLs
     successURL: 'https://docs.smartpay.co/example-pages/checkout-successful',
     cancelURL: 'https://docs.smartpay.co/example-pages/checkout-canceled',
+
+    test: true,
   };
 
   fetch('http://127.0.0.1:5000/create-smartpay-checkout', {

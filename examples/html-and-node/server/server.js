@@ -43,6 +43,8 @@ app.post('/create-smartpay-checkout', async (req, res) => {
     // Callback URLs
     successURL: 'https://docs.smartpay.co/example-pages/checkout-successful',
     cancelURL: 'https://docs.smartpay.co/example-pages/checkout-canceled',
+
+    test: true,
   };
 
   const session = await smartpay.createCheckoutSession(payload);
