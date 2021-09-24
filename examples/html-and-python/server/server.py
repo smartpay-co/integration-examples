@@ -3,7 +3,7 @@ from flask_cors import CORS
 from smartpay import Smartpay
 
 
-smartpay = Smartpay('<YOUR_SECRET_API_KEY>',
+smartpay = Smartpay('<YOUR_PRIVATE_API_KEY>',
                     public_key='<YOUR_PUBLIC_API_KEY>')
 
 

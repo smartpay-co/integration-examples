@@ -9,7 +9,7 @@
   "author": "Smartpay Solutions PTE. LTD.",
   "license": "MIT",
   "dependencies": {
-    "@smartpay/sdk-node": "^0.0.1",
+    "@smartpay/sdk-node": "^0.0.6",
     "cors": "^2.8.5",
     "express": "^4.17.1"
   },
