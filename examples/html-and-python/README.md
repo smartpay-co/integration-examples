@@ -13,7 +13,7 @@ If the service didn't run up successfully, you can follow the instructions below
 Use python:
 
 ```bash
-python -m http.server 8080 -d build
+python3 -m http.server 8080 -d build
 ```
 
 Or use node:
@@ -28,7 +28,7 @@ serve -p 8080 build
 Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip3 install --user -r requirements.txt
 ```
 
 Start dev server:

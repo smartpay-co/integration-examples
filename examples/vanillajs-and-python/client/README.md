@@ -3,7 +3,7 @@
 Use python:
 
 ```bash
-python -m http.server 8080 -d build
+python3 -m http.server 8080 -d build
 ```
 
 Or use node:

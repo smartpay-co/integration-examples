@@ -1,7 +1,7 @@
 
 echo 'Frontend: VanillaJS'
 
-echo 'Try to use python http.server'
+echo 'Try to use python3 http.server'
 python3 -m http.server 8080 -d build &
 PID="$!"
 
@@ -9,7 +9,7 @@ echo $PID
 
 if ps -p $PID > /dev/null
 then
-  echo 'Using python http.server'
+  echo 'Using python3 http.server'
 else
   echo 'Try to use npx serve'
   npx serve -p 8080 build &
