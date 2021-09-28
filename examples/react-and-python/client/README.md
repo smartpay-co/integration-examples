@@ -6,6 +6,8 @@ Install dependencies:
 yarn install
 ```
 
+Fill the API key to replace `<YOUR_PUBLIC_API_KEY>` in `App.js`
+
 Build:
 
 ```bash

@@ -2,7 +2,7 @@
 
 import './App.css';
 
-const smartpay = new Smartpay('pk_test_zkgsljrtjtyejgsekcokfpdmva');
+const smartpay = new Smartpay('<YOUR_PUBLIC_API_KEY>');
 
 const checkout = () => {
   // Generate the payload for checkout session

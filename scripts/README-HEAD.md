@@ -1,3 +1,5 @@
+Before start the service, make sure you filled the API keys to replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` in corresponding files.
+
 To start the services, just execute the `start.sh` at root of each example folder:
 
 ```bash

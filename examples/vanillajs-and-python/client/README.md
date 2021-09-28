@@ -1,5 +1,7 @@
 ## How to Build Front-end Bundle
 
+Fill the API key to replace `<YOUR_PUBLIC_API_KEY>` in `client.js`
+
 Use python:
 
 ```bash
