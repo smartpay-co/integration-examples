@@ -1,44 +1,63 @@
-# Smartpay Example: vanillajs-and-python
+# Smartpay Example: integrate with vanillajs-and-python
 
-Before start the service, make sure you filled the API keys to replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` in corresponding files.
+## Prerequisites
 
-To start the services, just execute the `start.sh` at root of each example folder:
+### Register and apply for your own API keys
+
+Replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` with your own keys wherever necessary in the code.
+
+### Python v3.4+ with pip installed
+
+We recommend the latest version (v3.9.7 at the time of writing).
+
+#### Install Python v3.9.x
+
+**MacOS**
+
+We recommend using [Homebrew](https://brew.sh/).
+
+```shell
+brew install python@3.9
+brew link python3
+```
+
+**Windows**
+
+1. Download: [32-bit](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) | [64-bit](https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe)
+2. Follow the [official guide](https://docs.python.org/3/using/windows.html) for installation.
+
+## Get started
+
+### Automated script
 
 ```bash
 bash start.sh
 ```
 
-If the service didn't run up successfully, you can follow the instructions below to start each service separately.
+If this doesn't work out for you, try the following steps manually.
 
-## How to Build Front-end Bundle
+You will need to get `BOTH` frontend and backend servers running to make this example project work.
 
-Fill the API key to replace `<YOUR_PUBLIC_API_KEY>` in `client.js`
+In the following steps, `<PROJECT_ROOT>` refers to the root of this example project (where `client` and `server` directories exist).
 
-Use python:
+### Frontend (pre-bundled)
 
-```bash
-python3 -m http.server 8080 -d build
+```shell
+npx serve -p 8080 build
 ```
 
-Or use node:
+### Backend
 
-```bash
-npm i -g serve
-serve -p 8080 build
-```
+```shell
+cd <PROJECT_ROOT>/server
 
-## How to Start the Server
+# virtualenv
+python3 -m venv smartpay-env
+source smartpay-env/bin/activate # if you are on Windows: smartpay-env\Scripts\activate.bat
 
-Install dependencies:
+# install the required packages
+python3 -m pip install -r requirements.txt
 
-```bash
-pip3 install --user -r requirements.txt
-```
-
-Fill the API key to replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` in `server.py`
-
-Start dev server:
-
-```bash
-FLASK_APP=server flask run
+# run the flask server
+FLASK_APP=server python3 -m flask run
 ```

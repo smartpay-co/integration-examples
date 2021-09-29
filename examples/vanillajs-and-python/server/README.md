@@ -1,15 +1,15 @@
-## How to Start the Server
+### Backend
 
-Install dependencies:
+```shell
+cd <PROJECT_ROOT>/server
 
-```bash
-pip3 install --user -r requirements.txt
-```
+# virtualenv
+python3 -m venv smartpay-env
+source smartpay-env/bin/activate # if you are on Windows: smartpay-env\Scripts\activate.bat
 
-Fill the API key to replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` in `server.py`
+# install the required packages
+python3 -m pip install -r requirements.txt
 
-Start dev server:
-
-```bash
-FLASK_APP=server flask run
+# run the flask server
+FLASK_APP=server python3 -m flask run
 ```

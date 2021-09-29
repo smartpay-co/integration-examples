@@ -15,10 +15,13 @@ for FE_DIR in client/* ; do
       COMB="${FE}-and-${BE}";
       COMB_DIR="examples/${COMB}";
 
-      [[ "${FE}" == "${HTML}" ]] && BE_DIR="${BE_DIR}-with-html"
-
-      echo "$COMB"
-
+      echo
+      echo "========debug========"
+      echo "FE: $FE"
+      echo "BE: $BE"
+      echo "COMB: $COMB"
+      echo "========debug========"
+      echo
 
       if [[ -d "$COMB_DIR" ]]; then
         rm -rf $COMB_DIR
@@ -29,16 +32,42 @@ for FE_DIR in client/* ; do
       rsync -av ${BE_DIR}/ ${COMB_DIR}/server --exclude node_modules
       rsync -av ${FE_DIR}/ ${COMB_DIR}/client --exclude node_modules
 
-      echo "# Smartpay Example: ${COMB}\n" > ${COMB_DIR}/README.md
+      # readme title
+      echo "# Smartpay Example: integrate with ${COMB}\n" > ${COMB_DIR}/README.md
+
+      # readme header
       cat scripts/README-HEAD.md >> ${COMB_DIR}/README.md
+
+      # new lines
       echo >> ${COMB_DIR}/README.md
+
+      # TOFIX: update when more BE languages are avilable
+      if [[ "$BE" == "node" ]]; then
+        cat scripts/README-INSTALL-NODE.md >> ${COMB_DIR}/README.md
+      else
+        cat scripts/README-INSTALL-PYTHON.md >> ${COMB_DIR}/README.md
+      fi
+
+      # new lines
+      echo >> ${COMB_DIR}/README.md
+
+      # get started section
+      cat scripts/README-GET-STARTED.md >> ${COMB_DIR}/README.md
+
+      # new lines
+      echo >> ${COMB_DIR}/README.md
+
       cat ${FE_DIR}/README.md >> ${COMB_DIR}/README.md
+
+      # new lines
       echo >> ${COMB_DIR}/README.md
+
       cat ${BE_DIR}/README.md >> ${COMB_DIR}/README.md
 
       cp scripts/start.sh ${COMB_DIR}/start.sh
 
       rm public/${COMB}.zip
+
       cd examples && zip -r ../public/${COMB}.zip $COMB -x '*node_modules*' -x '*.DS_Store*' -x '*build*' && cd -
     fi
   done
