@@ -17,7 +17,7 @@ for FE_DIR in client/* ; do
 
       echo
       echo "========debug========"
-      echo "FE: ${FE}"
+      echo "FE: $FE"
       echo "BE: $BE"
       echo "COMB: $COMB"
       echo "========debug========"
