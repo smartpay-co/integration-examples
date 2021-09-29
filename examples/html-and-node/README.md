@@ -1,42 +1,46 @@
-# Smartpay Example: html-and-node
+# Smartpay Example: integrate with HTML and Nodejs
 
-Before start the service, make sure you filled the API keys to replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` in corresponding files.
+## Prerequisites
 
-To start the services, just execute the `start.sh` at root of each example folder:
+### Register and apply for your own API keys
+
+Replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` with your own keys wherever necessary in the code.
+
+### Nodejs v14 LTS installed with PATH properly configured
+
+If you don't already have it installed in your machine, we recommend using [nvm](https://github.com/nvm-sh/nvm).
+
+Follow the official guide to install `nvm` properly, then:
+
+
+```shell
+nvm install --lts 14
+nvm use --lts 14
+```
+
+## Get started
+
+### Automated script
 
 ```bash
 bash start.sh
 ```
 
-If the service didn't run up successfully, you can follow the instructions below to start each service separately.
+If this doesn't work out for you, try the following steps manually:
 
-## How to Build Front-end Bundle
+### Frontend (pre-bundled)
 
-Use python:
-
-```bash
-python3 -m http.server 8080 -d build
-```
-
-Or use node:
-
-```bash
-npm i -g serve
+```shell
+npm i -g serve # or yarn global add serve
 serve -p 8080 build
 ```
 
-## How to Start the Server
+### Backend
 
-Install dependencies:
-
-```bash
-yarn install
+```shell
+yarn && yarn start
 ```
 
-Fill the API key to replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` in `server.js`
+### Congratulations!
 
-Start dev server:
-
-```bash
-yarn start
-```
+Now you can open [http://localhost:8080/](http://localhost:8080/) and try it out.

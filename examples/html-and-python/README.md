@@ -32,7 +32,7 @@ You will need to get `BOTH` frontend and backend servers running to make this ex
 
 In the following steps, `<PROJECT_ROOT>` refers to the root of this example project for `html-and-python` (where `client` and `server` directories exist).
 
-### Frontend
+### Frontend (pre-bundled)
 
 ```shell
 cd <PROJECT_ROOT>/client
