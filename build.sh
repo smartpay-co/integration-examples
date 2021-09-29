@@ -38,6 +38,9 @@ for FE_DIR in client/* ; do
       # readme header
       cat scripts/README-HEAD.md >> ${COMB_DIR}/README.md
 
+      # new lines
+      echo >> ${COMB_DIR}/README.md
+
       # TOFIX: update when more BE languages are avilable
       if [[ "$BE" == "node" ]]; then
         cat scripts/README-INSTALL-NODE.md >> ${COMB_DIR}/README.md

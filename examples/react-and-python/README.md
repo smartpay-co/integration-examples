@@ -4,7 +4,9 @@
 
 ### Register and apply for your own API keys
 
-Replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` with your own keys wherever necessary in the code.### Python v3.4+ with pip installed
+Replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` with your own keys wherever necessary in the code.
+
+### Python v3.4+ with pip installed
 
 We recommend the latest version (v3.9.7 at the time of writing).
 
@@ -23,6 +25,7 @@ brew link python3
 
 1. Download: [32-bit](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) | [64-bit](https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe)
 2. Follow the [official guide](https://docs.python.org/3/using/windows.html) for installation.
+
 ## Get started
 
 ### Automated script
