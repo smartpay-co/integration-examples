@@ -14,7 +14,7 @@ We recommend the latest version (v3.9.7 at the time of writing).
 
 **MacOS**
 
-We recommend [Homebrew](https://brew.sh/).
+We recommend using [Homebrew](https://brew.sh/).
 
 ```shell
 brew install python@3.9
