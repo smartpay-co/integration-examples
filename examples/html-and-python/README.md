@@ -1,4 +1,4 @@
-# Smartpay Example: html-and-python
+# Smartpay Example - integrate with HTML and Python
 
 ## Prerequisites
 
