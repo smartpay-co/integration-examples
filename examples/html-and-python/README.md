@@ -10,12 +10,12 @@ Replace `<YOUR_PRIVATE_API_KEY>` and `<YOUR_PUBLIC_API_KEY>` with your own keys 
 
 We recommend the latest version (v3.9.7 at the time of writing).
 
-#### Install Python v3.9.7
+#### Install Python v3.9.x
 
 **MacOS**
 
 ```shell
-brew install python3
+brew install python@3.9
 brew link python3
 ```
 
