@@ -1,15 +1,6 @@
-## How to Build Front-end Bundle
+### Frontend (pre-bundled)
 
-Install dependencies:
-
-```bash
-yarn install
-```
-
-Fill the API key to replace `<YOUR_PUBLIC_API_KEY>` in `App.js`
-
-Build:
-
-```bash
-yarn build
+```shell
+npm i -g serve # or yarn global add serve
+serve -p 8080 build
 ```
