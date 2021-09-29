@@ -14,7 +14,9 @@ for FE_DIR in client/* ; do
       BE=${BE_DIR/server\//}
       COMB="${FE}-and-${BE}";
       COMB_DIR="examples/${COMB}";
-
+      
+      [[ "${FE}" == "${HTML}" ]] && BE_DIR="${BE_DIR}-with-html"
+      
       echo
       echo "========debug========"
       echo "FE: $FE"
