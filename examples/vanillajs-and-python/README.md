@@ -43,8 +43,7 @@ In the following steps, `<PROJECT_ROOT>` refers to the root of this example proj
 ### Frontend (pre-bundled)
 
 ```shell
-npm i -g serve # or yarn global add serve
-serve -p 8080 build
+npx serve -p 8080 build
 ```
 
 ### Backend
