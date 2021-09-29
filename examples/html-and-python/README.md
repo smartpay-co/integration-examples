@@ -23,6 +23,7 @@ brew link python3
 
 1. Download: [32-bit](https://www.python.org/ftp/python/3.9.7/python-3.9.7.exe) | [64-bit](https://www.python.org/ftp/python/3.9.7/python-3.9.7-amd64.exe)
 2. Follow the [official guide](https://docs.python.org/3/using/windows.html) for installation.
+
 ## Get started
 
 ### Automated script
