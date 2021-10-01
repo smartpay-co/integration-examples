@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server.js"
   },
-  "author": "Smartpay PTE. LTD.",
+  "author": "Smartpay Co. Ltd.",
   "license": "MIT",
   "dependencies": {
     "@smartpay/sdk-node": "^0.1.0",
