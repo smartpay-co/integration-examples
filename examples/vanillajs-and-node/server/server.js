@@ -5,9 +5,13 @@ const express = require('express');
 const Smartpay = require('@smartpay/sdk-node').default; // The Nodejs SDK
 
 // Replace the keys with yours
-const smartpay = new Smartpay('<YOUR_PRIVATE_API_KEY>', {
-  publicKey: '<YOUR_PUBLIC_API_KEY>',
+const PRIVATE_API_KEY = process.env.PRIVATE_API_KEY || '<YOUR_PRIVATE_API_KEY>';
+const PUBLIC_API_KEY = process.env.PUBLIC_API_KEY || '<YOUR_PUBLIC_API_KEY>';
+
+const smartpay = new Smartpay(PRIVATE_API_KEY, {
+  publicKey: PUBLIC_API_KEY,
 });
+
 const app = express();
 const root = path.join(__dirname, '..', 'client', 'build');
 
