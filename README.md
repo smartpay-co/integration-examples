@@ -1,5 +1,18 @@
 # Smartpay Examples
 
+## Start script
+
+We support three environment variables for you to easier start the test project:
+
+- PUBLIC_API_KEY
+- PRIVATE_API_KEY
+
+So you can go to any folder in `examples` then execute:
+
+```sh
+PUBLIC_API_KEY=<YOUR_PUBLIC_API_KEY> PRIVATE_API_KEY=<YOUR_PRIVATE_API_KEY> bash start.sh
+```
+
 ## Sturcture
 
 - client - Client side integration examples
