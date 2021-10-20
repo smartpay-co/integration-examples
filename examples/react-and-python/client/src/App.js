@@ -1,8 +1,10 @@
-/* global Smartpay */
-
+import Smartpay from '@smartpay/sdk-web';
 import './App.css';
 
-const smartpay = new Smartpay('<YOUR_PUBLIC_API_KEY>');
+const PUBLIC_API_KEY =
+  process.env.REACT_APP_PUBLIC_API_KEY || '<YOUR_PUBLIC_API_KEY>';
+
+const smartpay = new Smartpay(PUBLIC_API_KEY);
 
 const checkout = () => {
   // Generate the payload for checkout session

@@ -6,11 +6,11 @@ yarn_status=$?
 
 if [ $yarn_status -eq 0 ]
 then
-  PORT=8080 yarn start &
+  PORT=8080 REACT_APP_PUBLIC_API_KEY=$PUBLIC_API_KEY yarn start &
   PID="$!"
 else
   npm install
-  PORT=8080 npm run start &
+  PORT=8080 REACT_APP_PUBLIC_API_KEY=$PUBLIC_API_KEY npm run start &
   PID="$!"
 fi
 
