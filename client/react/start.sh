@@ -14,6 +14,8 @@ else
   PID="$!"
 fi
 
+echo "Frontend Server, Service PID: $PID"
+
 function trap_ctrlc ()
 {
     echo "Stop Frontend Server, Service PID: $PID"

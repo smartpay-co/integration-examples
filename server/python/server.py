@@ -18,11 +18,6 @@ CORS(app)
 root = '../client/build'
 
 
-@app.route("/")
-def home():
-    return send_from_directory(root, 'index.html')
-
-
 @app.route("/create-smartpay-checkout", methods=['POST'])
 def create_smartpay_checkout():
     payload = request.json

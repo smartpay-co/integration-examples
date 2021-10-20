@@ -5,10 +5,9 @@ echo 'Try to use python3 http.server'
 python3 -m http.server 8080 -d build &
 PID="$!"
 
-echo $PID
-
 if ps -p $PID > /dev/null
 then
+  echo "Frontend Server, Service PID: $PID"
   echo 'Using python3 http.server'
 else
   echo 'Try to use npx serve'
@@ -17,6 +16,7 @@ else
 
   if ps -p $PID > /dev/null
   then
+  echo "Frontend Server, Service PID: $PID"
   echo 'Using npx serve'
   else
     echo 'Unable to serve Frontend service'

@@ -70,7 +70,7 @@ for FE_DIR in client/* ; do
 
       rm public/${COMB}.zip
 
-      cd examples && zip -r ../public/${COMB}.zip $COMB -x '*node_modules*' -x '*.DS_Store*' -x '*build*' && cd -
+      cd examples && zip -r ../public/${COMB}.zip $COMB -x '*node_modules*' -x '*.DS_Store*' && cd -
     fi
   done
 
