@@ -38,3 +38,16 @@ PUBLIC_API_KEY=<YOUR_PUBLIC_API_KEY> PRIVATE_API_KEY=<YOUR_PRIVATE_API_KEY> bash
 - Folder name postfix: `-with-html`
 - Provide checkout payload in the code
 - The api `/create-smartpay-checkout` will redirects to the checkout via HTTP code(303).
+
+## Build examples
+
+Please install following tools before you start to build examples:
+
+- jq (`brew install jq`)
+- sponge (`brew install moreutils`)
+
+Then execute:
+
+```
+./scripts/build.sh
+```

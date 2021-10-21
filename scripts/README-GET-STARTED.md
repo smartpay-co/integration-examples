@@ -2,6 +2,8 @@
 
 ### Automated script
 
+You must have node 14 or later installed, then go to the root of the example folder and execute:
+
 ```bash
 npm run start
 ```
