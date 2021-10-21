@@ -46,6 +46,8 @@ for FE_DIR in client/* ; do
       # TOFIX: update when more BE languages are avilable
       if [[ "$BE" == "node" ]]; then
         cat scripts/README-INSTALL-NODE.md >> ${COMB_DIR}/README.md
+      elif [[ "$BE" == "ruby" ]]; then
+        cat scripts/README-INSTALL-RUBY.md >> ${COMB_DIR}/README.md
       else
         cat scripts/README-INSTALL-PYTHON.md >> ${COMB_DIR}/README.md
       fi
