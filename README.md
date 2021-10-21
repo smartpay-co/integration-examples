@@ -51,3 +51,24 @@ Then execute:
 ```
 ./scripts/build.sh
 ```
+
+## Build
+
+Every time a new backend language support is added, please do the following before you commit:
+
+- make sure you add a new `README-INSTALL-{LANGUAGE}.md}` with proper content
+- edit `scripts/build.sh` with additional logic to this section:
+
+```shell
+...
+if [[ "$BE" == "node" ]]; then
+  cat scripts/README-INSTALL-NODE.md >> ${COMB_DIR}/README.md
+elif [[ "$BE" == "ruby" ]]; then
+  cat scripts/README-INSTALL-RUBY.md >> ${COMB_DIR}/README.md
+else
+  cat scripts/README-INSTALL-PYTHON.md >> ${COMB_DIR}/README.md
+fi
+...
+```
+
+- run `script/build.sh` to generate the examples
