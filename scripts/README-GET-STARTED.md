@@ -3,7 +3,7 @@
 ### Automated script
 
 ```bash
-bash start.sh
+npm run start
 ```
 
 If this doesn't work out for you, try the following steps manually.
