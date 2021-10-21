@@ -67,6 +67,7 @@ for FE_DIR in client/* ; do
       cat ${BE_DIR}/README.md >> ${COMB_DIR}/README.md
 
       cp scripts/start.js ${COMB_DIR}/start.js
+      cp scripts/.npmrc ${COMB_DIR}/.npmrc
       cp scripts/package.json ${COMB_DIR}/package.json
 
       jq ".name=\"smartpay-integration-example-${COMB}\"" ${COMB_DIR}/package.json | sponge ${COMB_DIR}/package.json
