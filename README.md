@@ -35,15 +35,7 @@ When you are working on the back-end (server) support, here are a couple of thin
 1. Two folders are required for each back-end language. Say if you're working on the support for Ruby, two new folders will be required - `server/ruby` and `server/ruby-with-html`. The former offers the solution for the case where the frontend handles the redirection after the `checkout session` is created, on the other hand, for the latter, back-end handles the redirection (redirect via HTTP 303). Hence, the server implementation for the endpoint that creates the session would be different for the two cases. Please refer to the existing implementation for a more straightforward understanding.
 2. Routes for both `success` and `cancel` need to be provided - `/payment-success` and `payment-cancel`.
 
-
 ## Build Examples
-
-
-```shell
-./scripts/build.sh
-```
-
-## Build
 
 Every time a new backend language support is added, please do the following before you commit:
 
