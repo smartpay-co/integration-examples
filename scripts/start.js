@@ -6,15 +6,15 @@ const readline = require('readline').createInterface({
 const question = util.promisify(readline.question).bind(readline);
 
 const main = async function () {
-  if (!process.env.PUBLIC_API_KEY) {
-    process.env.PUBLIC_API_KEY = await question(
-      'What is your Smartpay PUBLIC_API_KEY?  '
+  if (!process.env.PUBLIC_KEY) {
+    process.env.PUBLIC_KEY = await question(
+      'What is your Smartpay PUBLIC_KEY?  '
     );
   }
 
-  if (!process.env.PRIVATE_API_KEY) {
-    process.env.PRIVATE_API_KEY = await question(
-      'What is your Smartpay PRIVATE_API_KEY? '
+  if (!process.env.SECRET_KEY) {
+    process.env.SECRET_KEY = await question(
+      'What is your Smartpay SECRET_KEY? '
     );
   }
 

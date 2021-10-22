@@ -1,4 +1,4 @@
-const smartpay = new Smartpay('<YOUR_PUBLIC_API_KEY>');
+const smartpay = new Smartpay('<YOUR_PUBLIC_KEY>');
 
 const checkout = () => {
   const payload = {
