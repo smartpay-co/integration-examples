@@ -1,0 +1,16 @@
+{
+  "name": "smartpay-integration-example-vanillajs-and-python",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "client": "cd client && node build.js && npx serve -p 3080 build",
+    "server": "cd server && pip3 install -q --user -r requirements.txt && FLASK_APP=server flask run --host=127.0.0.1 --port=5000",
+    "start": "npm install && node start.js"
+  },
+  "author": "Smartpay Co. Ltd.",
+  "license": "MIT",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
