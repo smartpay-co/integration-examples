@@ -6,8 +6,8 @@ Edit public key and secret key with your own credentials in `server.rb`
 
 ```ruby
 ...
-config.public_api_key = '<YOUR_PUBLIC_API_KEY>' # the one starts with pk_test_
-config.private_api_key = '<YOUR_PRIVATE_API_KEY>' # the one starts with sk_test_
+config.public_key = '<YOUR_PUBLIC_API_KEY>' # the one starts with pk_test_
+config.secret_key = '<YOUR_PRIVATE_API_KEY>' # the one starts with sk_test_
 ...
 ```
 
