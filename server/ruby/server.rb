@@ -5,9 +5,8 @@ Smartpay.configure do |config|
   config.api_url = 'https://api.smartpay.co/smartpayments'
   config.checkout_url = 'https://checkout.smartpay.co'
 
-  # edit public key and secret key with your own credentials
-  config.public_api_key = '<YOUR_PUBLIC_KEY>'
-  config.private_api_key = '<YOUR_SECRET_KEY>'
+  config.public_key = '<YOUR_PUBLIC_KEY>'
+  config.secret_key = '<YOUR_SECRET_KEY>'
 end
 
 PUBLIC_DIR = File.join(File.dirname(__FILE__), '../client/build')
