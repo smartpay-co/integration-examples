@@ -6,7 +6,7 @@
   "scripts": {
     "client": "cd client && node build.js && npx serve -p 3080 build",
     "server": "cd server && #!/bin/sh\n\npip3 install -q --user -r requirements.txt && FLASK_APP=server flask run --host=127.0.0.1 --port=5000",
-    "start": "npm install --no-fund --no-audit && node start.js"
+    "start": "npm install && node start.js"
   },
   "author": "Smartpay Co. Ltd.",
   "license": "MIT",

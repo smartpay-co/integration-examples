@@ -6,7 +6,7 @@
   "scripts": {
     "client": "cd client && node build.js && npx serve -p 3080 build",
     "server": "cd server && #!/bin/sh\n\ngem install bundler && bundle install --quiet && ruby server.rb",
-    "start": "npm install --no-fund --no-audit && node start.js"
+    "start": "npm install && node start.js"
   },
   "author": "Smartpay Co. Ltd.",
   "license": "MIT",

@@ -6,7 +6,7 @@
   "scripts": {
     "client": "echo 'fake client'",
     "server": "echo 'fake server'",
-    "start": "npm install --no-fund --no-audit && node start.js"
+    "start": "npm install && node start.js"
   },
   "author": "Smartpay Co. Ltd.",
   "license": "MIT",
