@@ -1,3 +1,22 @@
 .App {
   margin: 20px;
 }
+
+button {
+  padding: 0 40px;
+  font: 500 16px/48px Helvetica, sans-serif;
+  appearance: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  color: #fff;
+  background: #4456dd;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3445c1;
+}

@@ -49,6 +49,8 @@ As we mentioned above, having `Node.js v14` in place will make it a lot easier t
 npm run start
 ```
 
+then, after the build is finished, visit [http://localhost:3080](http://localhost:3080)
+
 ### Manual
 
 If this doesn't work out for you, try the following steps manually.

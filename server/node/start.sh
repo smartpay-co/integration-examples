@@ -1,3 +1,3 @@
 #!/bin/sh
 
-npm install && npm run start
+npm install --no-fund --no-audit && npm run start
