@@ -1,1 +1,1 @@
-ruby server.rb
+gem install bundler && bundle install && ruby server.rb

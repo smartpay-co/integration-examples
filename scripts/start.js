@@ -14,7 +14,7 @@ const main = async function () {
 
   if (!process.env.SECRET_KEY) {
     process.env.SECRET_KEY = await question(
-      'What is your Smartpay SECRET_KEY? '
+      'What is your Smartpay SECRET_KEY?  '
     );
   }
 
@@ -37,7 +37,7 @@ const main = async function () {
   setTimeout(function () {
     console.log('');
     console.log('');
-    console.log('Please visit: http://localhost:8080');
+    console.log('Please visit: http://localhost:3080');
     console.log('');
     console.log('');
   }, 3000);

@@ -2,11 +2,8 @@ require 'sinatra'
 require 'smartpay'
 
 Smartpay.configure do |config|
-  config.api_url = 'https://api.smartpay.co/smartpayments'
-  config.checkout_url = 'https://checkout.smartpay.co'
-
-  config.public_key = ENV['PUBLIC_API_KEY']
-  config.secret_key = ENV['PRIVATE_API_KEY']
+  config.public_key = ENV['PUBLIC_KEY']
+  config.secret_key = ENV['SECRET_KEY']
 end
 
 PUBLIC_DIR = File.join(File.dirname(__FILE__), '../client/build')
@@ -14,8 +11,8 @@ PUBLIC_DIR = File.join(File.dirname(__FILE__), '../client/build')
 set :port, 5000
 set :public_folder, PUBLIC_DIR
 
-get '/smartpays' do
-  redirect '/index.html'
+get '/' do
+  redirect 'https://localhost:3080'
 end
 
 post '/create-smartpay-checkout' do
@@ -37,7 +34,7 @@ post '/create-smartpay-checkout' do
       "lineItemData": [{
         "priceData": {
           "productData": {
-            "name": "レブロン 18 LOW",
+            "name": 'オリジナルス STAN SMITH',
           },
           "amount": 250,
           "currency": "JPY",
@@ -48,7 +45,6 @@ post '/create-smartpay-checkout' do
     "reference": "order_ref_1234567",
     "successUrl": "https://docs.smartpay.co/example-pages/checkout-successful",
     "cancelUrl": "https://docs.smartpay.co/example-pages/checkout-canceled",
-    "test": true
   })
 
   redirect session.redirect_url
