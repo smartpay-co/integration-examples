@@ -1,53 +1,44 @@
-# Smartpay Examples
+# Smartpay - Integration Examples
 
-## Start script
+## Requirements
 
-We support three environment variables for you to easier start the test project:
+The following assumes the dev envioronment is on MacOS.
 
-- PUBLIC_API_KEY
-- PRIVATE_API_KEY
-
-So you can go to any folder in `examples` then execute:
-
-```sh
-PUBLIC_API_KEY=<YOUR_PUBLIC_API_KEY> PRIVATE_API_KEY=<YOUR_PRIVATE_API_KEY> bash start.sh
-```
-
-## Sturcture
-
-- client - Client side integration examples
-- server - Server side integration examples
-- examples - The client and server combined examples
-- public - The zipped file of examples
-
-## Reqruirement of a Client Side implement
-
-- Provide a Makefile to execute the build, the target of build output is `build/` folder.
-- Provide index.html, payment-success.html, payment-cancelled.html in the `build/` folder.
-
-## Reqruirement of a Server Side implement
-
-- Provide two implements, one is to work with `html` client, another is to work with other client.
-- Provide an api `/create-smartpay-checkout` to call the checkout API and create session.
-- Provide two route for the callbacks:
-  - `/payment-success`
-  - `/payment-cancel`
-
-## Reqruirement of a Server Side implement to work with HTML client
-
-- Folder name postfix: `-with-html`
-- Provide checkout payload in the code
-- The api `/create-smartpay-checkout` will redirects to the checkout via HTTP code(303).
-
-## Build examples
-
-Please install following tools before you start to build examples:
-
+- Nodejs v12+
 - jq (`brew install jq`)
 - sponge (`brew install moreutils`)
 
-Then execute:
+## Get started with the examples
+
+Environment variables are available for `PUBLIC_KEY` and `SECRET_KEY` to get you off the ground quickly without having to edit the code.
+
+To get started, go into any examples under `./examples`, then execute the following:
+
+```sh
+PUBLIC_KEY=<YOUR_PUBLIC_KEY> SECRET_KEY=<YOUR_SECRET_KEY> npm run start
+```
+
+## Structure
 
 ```
+├── client - front-end examples
+├── examples - auto-generated fe/be compbined examples
+├── public - downloadable zipped examples
+├── scripts - build scripts
+└── server - back-end examples
+```
+
+## Development
+
+When you are working on the back-end (server) support, here are a couple of things you might want to know before you start.
+
+1. Two folders are required for each back-end language. Say if you're working on the support for Ruby, two new folders will be required - `server/ruby` and `server/ruby-with-html`. The former offers the solution for the case where the frontend handles the redirection after the `checkout session` is created, on the other hand, for the latter, back-end handles the redirection (redirect via HTTP 303). Hence, the server implementation for the endpoint that creates the session would be different for the two cases. Please refer to the existing implementation for a more straightforward understanding.
+2. Routes for both `success` and `cancel` need to be provided - `/payment-success` and `payment-cancel`.
+
+
+## Build Examples
+
+
+```shell
 ./scripts/build.sh
 ```
