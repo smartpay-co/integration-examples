@@ -5,11 +5,11 @@ const express = require('express');
 const Smartpay = require('@smartpay/sdk-node').default; // The Nodejs SDK
 
 // Replace the keys with yours
-const PRIVATE_API_KEY = process.env.PRIVATE_API_KEY || '<YOUR_PRIVATE_API_KEY>';
-const PUBLIC_API_KEY = process.env.PUBLIC_API_KEY || '<YOUR_PUBLIC_API_KEY>';
+const SECRET_KEY = process.env.SECRET_KEY || '<YOUR_SECRET_KEY>';
+const PUBLIC_KEY = process.env.PUBLIC_KEY || '<YOUR_PUBLIC_KEY>';
 
-const smartpay = new Smartpay(PRIVATE_API_KEY, {
-  publicKey: PUBLIC_API_KEY,
+const smartpay = new Smartpay(SECRET_KEY, {
+  publicKey: PUBLIC_KEY,
 });
 
 const app = express();
@@ -26,28 +26,23 @@ app.post('/create-smartpay-checkout', async (req, res) => {
   const payload = {
     items: [
       {
-        name: 'レブロン 18 LOW',
+        name: 'オリジナルス STAN SMITH',
         amount: 250,
         currency: 'JPY',
         quantity: 1,
       },
     ],
-
     shipping: {
       line1: 'line1',
       locality: 'locality',
       postalCode: '123',
       country: 'JP',
     },
-
     // Your internal reference of the order
     reference: 'order_ref_1234567',
-
     // Callback URLs
     successURL: 'https://docs.smartpay.co/example-pages/checkout-successful',
     cancelURL: 'https://docs.smartpay.co/example-pages/checkout-canceled',
-
-    test: true,
   };
 
   const session = await smartpay.createCheckoutSession(payload);

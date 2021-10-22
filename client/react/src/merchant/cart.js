@@ -1,7 +1,7 @@
 // Mock order items
 const orderItems = [
   {
-    name: 'レブロン 18 LOW',
+    name: 'オリジナルス STAN SMITH',
     description: 'ウィメンズ シューズ',
     image: 'absolute_url_to_product_image.jpg',
     price: 250,
