@@ -1,21 +1,25 @@
 import os
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, redirect
 from flask_cors import CORS
 from smartpay import Smartpay
 
 
 # Replace the keys with yours
-PRIVATE_API_KEY = os.environ.get('PRIVATE_API_KEY', '<YOUR_PRIVATE_API_KEY>')
-PUBLIC_API_KEY = os.environ.get('PUBLIC_API_KEY', '<YOUR_PUBLIC_API_KEY>')
+SECRET_KEY = os.environ.get('SECRET_KEY', '<YOUR_SECRET_KEY>')
+PUBLIC_KEY = os.environ.get('PUBLIC_KEY', '<YOUR_PUBLIC_KEY>')
 
-smartpay = Smartpay(PRIVATE_API_KEY,
-                    public_key=PUBLIC_API_KEY)
+smartpay = Smartpay(SECRET_KEY, public_key=PUBLIC_KEY)
 
 
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
 root = '../client/build'
+
+
+@app.route("/", methods=['GET'])
+def index():
+    return redirect('http://localhost:3080')
 
 
 @app.route("/create-smartpay-checkout", methods=['POST'])

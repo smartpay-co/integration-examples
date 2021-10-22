@@ -1,38 +1,32 @@
 import Smartpay from '@smartpay/sdk-web';
 import './App.css';
 
-const PUBLIC_API_KEY =
-  process.env.REACT_APP_PUBLIC_API_KEY || '<YOUR_PUBLIC_API_KEY>';
+const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY || '<YOUR_PUBLIC_KEY>';
 
-const smartpay = new Smartpay(PUBLIC_API_KEY);
+const smartpay = new Smartpay(PUBLIC_KEY);
 
 const checkout = () => {
   // Generate the payload for checkout session
   const payload = {
     items: [
       {
-        name: 'レブロン 18 LOW',
+        name: 'オリジナルス STAN SMITH',
         amount: 250,
         currency: 'JPY',
         quantity: 1,
       },
     ],
-
     shipping: {
       line1: 'line1',
       locality: 'locality',
       postalCode: '123',
       country: 'JP',
     },
-
     // Your internal reference of the order
     reference: 'order_ref_1234567',
-
     // Callback URLs
     successURL: 'https://docs.smartpay.co/example-pages/checkout-successful',
     cancelURL: 'https://docs.smartpay.co/example-pages/checkout-canceled',
-
-    test: true,
   };
 
   fetch('http://127.0.0.1:5000/create-smartpay-checkout', {

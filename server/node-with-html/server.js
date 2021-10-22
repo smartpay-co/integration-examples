@@ -19,6 +19,10 @@ app.use(express.static(root));
 app.use(express.json());
 app.use(cors());
 
+app.get('/', async (req, res) => {
+  res.redirect('http://localhost:3080');
+});
+
 app.post('/create-smartpay-checkout', async (req, res) => {
   const CALLBACK_URL_PREFIX = req.headers.referer;
 

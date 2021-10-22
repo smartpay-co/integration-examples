@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify, send_from_directory, redirect
 from flask_cors import CORS
 from smartpay import Smartpay
 
@@ -16,6 +16,12 @@ CORS(app)
 
 root = '../client/build'
 
+
+@app.route("/", methods=['GET'])
+def index():
+    return redirect('http://localhost:3080')
+
+
 @app.route("/create-smartpay-checkout", methods=['POST'])
 def create_smartpay_checkout():
     payload = request.json
@@ -23,6 +29,7 @@ def create_smartpay_checkout():
     session = smartpay.create_checkout_session(payload)
 
     return jsonify(session)
+
 
 @app.route("/payment-success")
 def payment_success():
