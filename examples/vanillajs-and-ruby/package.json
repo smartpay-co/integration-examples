@@ -5,7 +5,7 @@
   "main": "start.js",
   "scripts": {
     "client": "cd client && node build.js && npx serve -p 3080 build",
-    "server": "cd server && gem install bundler && bundle install && ruby server.rb",
+    "server": "cd server && #!/bin/sh\n\ngem install bundler && bundle install && ruby server.rb",
     "start": "npm install && node start.js"
   },
   "author": "Smartpay Co. Ltd.",

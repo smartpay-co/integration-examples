@@ -5,7 +5,7 @@
   "main": "start.js",
   "scripts": {
     "client": "cd client && node build.js && npx serve -p 3080 build",
-    "server": "cd server && npm install && npm run start",
+    "server": "cd server && #!/bin/sh\n\nnpm install && npm run start",
     "start": "npm install && node start.js"
   },
   "author": "Smartpay Co. Ltd.",

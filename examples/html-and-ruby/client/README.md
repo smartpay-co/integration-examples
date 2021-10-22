@@ -1,5 +1,5 @@
-### Frontend (pre-bundled)
+### Frontend
 
 ```shell
-npx serve -p 8080 build
+npm run start
 ```

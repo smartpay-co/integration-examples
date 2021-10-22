@@ -35,12 +35,12 @@ const main = async function () {
     });
 
   setTimeout(function () {
-    console.log('');
+    console.log('=====================================');
     console.log('');
     console.log('Please visit: http://localhost:3080');
     console.log('');
-    console.log('');
-  }, 3000);
+    console.log('=====================================');
+  }, 2500);
 };
 
 main();

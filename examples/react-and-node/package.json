@@ -4,8 +4,8 @@
   "description": "",
   "main": "start.js",
   "scripts": {
-    "client": "cd client && npm install && PORT=3080 REACT_APP_PUBLIC_KEY=$PUBLIC_KEY npm run start",
-    "server": "cd server && npm install && npm run start",
+    "client": "cd client && #!/bin/sh\n\nnpm install && PORT=3080 REACT_APP_PUBLIC_KEY=$PUBLIC_KEY npm run start",
+    "server": "cd server && #!/bin/sh\n\nnpm install && npm run start",
     "start": "npm install && node start.js"
   },
   "author": "Smartpay Co. Ltd.",
