@@ -8,15 +8,12 @@ from smartpay import Smartpay
 SECRET_KEY = os.environ.get('SECRET_KEY', '<YOUR_SECRET_KEY>')
 PUBLIC_KEY = os.environ.get('PUBLIC_KEY', '<YOUR_PUBLIC_KEY>')
 
-smartpay = Smartpay(SECRET_KEY,
-                    public_key=PUBLIC_KEY)
-
+smartpay = Smartpay(SECRET_KEY, public_key=PUBLIC_KEY)
 
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
 root = '../client/build'
-
 
 @app.route("/create-smartpay-checkout", methods=['POST'])
 def create_smartpay_checkout():
@@ -25,25 +22,21 @@ def create_smartpay_checkout():
     session = smartpay.create_checkout_session({
         "items": [
             {
-                "name": 'レブロン 18 LOW',
+                "name": 'オリジナルス STAN SMITH',
                 "price": 250,
                 "currency": 'JPY',
                 "quantity": 1,
             },
         ],
-
         "shipping": {
             "line1": 'line1',
             "locality": 'locality',
             "postalCode": '123',
             "country": 'JP',
         },
-
         "reference": 'order_ref_1234567',
         "successURL": 'https://docs.smartpay.co/example-pages/checkout-successful',
         "cancelURL": 'https://docs.smartpay.co/example-pages/checkout-canceled',
-
-        "test": True,
     })
 
     return redirect(session['checkoutURL'], 303)

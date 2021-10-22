@@ -8,15 +8,13 @@ from smartpay import Smartpay
 SECRET_KEY = os.environ.get('SECRET_KEY', '<YOUR_SECRET_KEY>')
 PUBLIC_KEY = os.environ.get('PUBLIC_KEY', '<YOUR_PUBLIC_KEY>')
 
-smartpay = Smartpay(SECRET_KEY,
-                    public_key=PUBLIC_KEY)
+smartpay = Smartpay(SECRET_KEY, public_key=PUBLIC_KEY)
 
 
 app = Flask(__name__, static_url_path='')
 CORS(app)
 
 root = '../client/build'
-
 
 @app.route("/create-smartpay-checkout", methods=['POST'])
 def create_smartpay_checkout():
@@ -25,7 +23,6 @@ def create_smartpay_checkout():
     session = smartpay.create_checkout_session(payload)
 
     return jsonify(session)
-
 
 @app.route("/payment-success")
 def payment_success():
