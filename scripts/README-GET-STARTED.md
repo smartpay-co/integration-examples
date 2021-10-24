@@ -2,13 +2,17 @@
 
 ### Automated
 
-As we mentioned above, having `Node.js v14` in place will make it a lot easier to get this example up and running by simply executing:
+Assuming you have Node.js v14+ now, the last step for you is to:
 
 ```shell
 npm run start
 ```
 
-then, after the build is finished, visit [http://localhost:3080](http://localhost:3080)
+> :warning: Please note that it could take a while for everything to be configured & installed.
+
+then, after the build is finished, **visit [http://localhost:3080](http://localhost:3080)**.
+
+---
 
 ### Manual
 

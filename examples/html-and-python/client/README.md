@@ -1,4 +1,4 @@
-### Frontend
+### Client
 
 ```shell
 npm run start

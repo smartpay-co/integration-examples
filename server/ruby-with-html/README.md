@@ -1,4 +1,4 @@
-### Backend
+### Server
 
 #### Fill in your API keys
 

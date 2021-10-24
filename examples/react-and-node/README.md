@@ -2,15 +2,23 @@
 
 ## Prerequisites
 
-### Register and apply for your own API keys
+### Prepare your own API keys
 
-Replace `<YOUR_SECRET_KEY>` and `<YOUR_PUBLIC_KEY>` with your own keys wherever necessary in the code.
+If you don't already have it, you can find your credentials at the `settings > credentials` page on your [dashboard](https://dashboard.smartpay.co/settings/credentials).
 
 ### Make sure you have Node.js v14+ installed
 
+You can make sure of it by executing:
+
+```shell
+node -v
+```
+
 Even if you do not intend to use Node as your back-end language, having `Node.js v14+` would ensure a smooth experience to get our example code up and running.
 
-If you don't already have it installed in your machine, we recommend using [nvm](https://github.com/nvm-sh/nvm).
+If you already have it in place, you can skip the following and go directly to [get started](#get-started).
+
+If you don't, we recommend using [nvm](https://github.com/nvm-sh/nvm).
 
 Follow the official guide to install `nvm` properly, then:
 
@@ -19,24 +27,21 @@ nvm install --lts 14
 nvm use --lts 14
 ```
 
-To ensure you are using the correct version:
-
-```shell
-node -v
-```
-
-
 ## Get started
 
 ### Automated
 
-As we mentioned above, having `Node.js v14` in place will make it a lot easier to get this example up and running by simply executing:
+Assuming you have Node.js v14+ now, the last step for you is to:
 
 ```shell
 npm run start
 ```
 
-then, after the build is finished, visit [http://localhost:3080](http://localhost:3080)
+> :warning: Please note that it could take a while for everything to be configured & installed.
+
+then, after the build is finished, **visit [http://localhost:3080](http://localhost:3080)**.
+
+---
 
 ### Manual
 
@@ -46,13 +51,13 @@ You will need to get `BOTH` frontend and backend servers running simutaneously f
 
 In the following steps, `<PROJECT_ROOT>` refers to the root of this example project (where `client` and `server` directories reside in).
 
-### Frontend (pre-bundled)
+### Client
 
 ```shell
 npx serve -p 8080 build
 ```
 
-### Backend
+### Server
 
 ```shell
 npm install && npm run start

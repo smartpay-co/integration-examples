@@ -1,4 +1,4 @@
-### Frontend (pre-bundled)
+### Client
 
 ```shell
 npx serve -p 8080 build
