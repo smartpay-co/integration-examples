@@ -4,7 +4,7 @@
 
 The following assumes the dev envioronment is on MacOS.
 
-- Nodejs v12+
+- Nodejs v14+
 - jq (`brew install jq`)
 - sponge (`brew install moreutils`)
 
