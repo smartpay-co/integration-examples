@@ -1,0 +1,9 @@
+{
+  "name": "smartpay-integration-example-vanillajs",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node build.js && npx serve -p 3080 build"
+  },
+  "author": "Smartpay Co. Ltd.",
+  "license": "MIT"
+}
