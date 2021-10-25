@@ -32,7 +32,6 @@ const checkout = () => {
         postalCode: '107-0061',
         country: 'JP',
       },
-      phone: '+86000000001',
       dateOfBirth: '1985-06-30',
       gender: 'male',
     },
