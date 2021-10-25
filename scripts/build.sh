@@ -76,7 +76,11 @@ for FE_DIR in client/* ; do
 
       rm public/${COMB}.zip
 
+      rm ${COMB_DIR}/client/README.md
+      rm ${COMB_DIR}/server/README.md
+
       cd examples && zip -r ../public/${COMB}.zip $COMB -x '*node_modules*' -x '*.DS_Store*' && cd -
+
     fi
   done
 
