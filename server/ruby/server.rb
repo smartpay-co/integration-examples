@@ -1,21 +1,27 @@
 require 'sinatra'
+require "sinatra/cors"
 require 'smartpay'
 
 Smartpay.configure do |config|
+  config.api_url = ENV['SMARTPAY_API_PREFIX']
   config.public_key = ENV['PUBLIC_KEY']
   config.secret_key = ENV['SECRET_KEY']
 end
 
-PUBLIC_DIR = File.join(File.dirname(__FILE__), '../client/build')
-
 set :port, 5000
-set :public_folder, PUBLIC_DIR
-
-get '/' do
-  redirect 'https://localhost:3080'
-end
+set :allow_origin, "*"
+set :allow_methods, "GET, PUT, POST, DELETE, OPTIONS"
+set :allow_headers, "Authorization, Content-Type, Accept"
 
 post '/create-smartpay-checkout' do
-  Smartpay::Api.create_checkout_session(params).as_json
-end
+  content_type :json
 
+  params = JSON.parse(request.body.read)
+  Smartpay::Api.create_checkout_session(params).as_json
+rescue => err
+  if err.respond_to?(:response)
+    err.response.body
+  else
+    raise err
+  end
+end
