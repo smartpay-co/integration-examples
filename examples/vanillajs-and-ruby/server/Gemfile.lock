@@ -26,7 +26,8 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
-    smartpay (0.2.5)
+    sinatra-cors (1.2.0)
+    smartpay (0.2.10)
       rest-client (~> 2.1)
     tilt (2.0.10)
     unf (0.1.4)
@@ -39,6 +40,7 @@ PLATFORMS
 
 DEPENDENCIES
   sinatra
+  sinatra-cors
   smartpay (~> 0)
 
 BUNDLED WITH
