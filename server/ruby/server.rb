@@ -3,7 +3,6 @@ require "sinatra/cors"
 require 'smartpay'
 
 Smartpay.configure do |config|
-  config.api_url = ENV['SMARTPAY_API_PREFIX']
   config.public_key = ENV['PUBLIC_KEY']
   config.secret_key = ENV['SECRET_KEY']
 end
