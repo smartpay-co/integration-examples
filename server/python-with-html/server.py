@@ -44,9 +44,9 @@ def create_smartpay_checkout():
             "address": {
                 "line1": '3-6-7',
                 "line2": '青山パラシオタワー 11階',
-                "administrativeArea": '港区北青山',
+                "administrativeArea": '東京都',
                 "subLocality": '',
-                "locality": '東京都',
+                "locality": '港区北青山',
                 "postalCode": '107-0061',
                 "country": 'JP',
             },
