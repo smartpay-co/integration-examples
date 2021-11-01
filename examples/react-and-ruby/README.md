@@ -67,7 +67,7 @@ In the following steps, `<PROJECT_ROOT>` refers to the root of this example proj
 ### Client
 
 ```shell
-npx serve -p 3080 build
+npx serve -p 8080 build
 ```
 
 ### Server
