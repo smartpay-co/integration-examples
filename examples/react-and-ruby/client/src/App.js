@@ -24,10 +24,10 @@ const checkout = () => {
       firstNameKana: 'たなか',
       lastNameKana: 'たろう',
       address: {
-        line1: '3-6-7',
+        line1: '北青山 3-6-7',
         line2: '青山パラシオタワー 11階',
         subLocality: '',
-        locality: '港区北青山',
+        locality: '港区',
         administrativeArea: '東京都',
         postalCode: '107-0061',
         country: 'JP',
@@ -36,9 +36,12 @@ const checkout = () => {
       gender: 'male',
     },
     shipping: {
-      line1: 'line1',
-      locality: 'locality',
-      postalCode: '123',
+      line1: '北青山 3-6-7',
+      line2: '青山パラシオタワー 11階',
+      subLocality: '',
+      locality: '港区',
+      administrativeArea: '東京都',
+      postalCode: '107-0061',
       country: 'JP',
     },
     // Your internal reference of the order
