@@ -1,9 +1,8 @@
 <?php
 
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
 use Slim\Factory\AppFactory;
-use GuzzleHttp\Psr7\LazyOpenStream;
 
 require __DIR__ . '/./vendor/autoload.php';
 
@@ -35,34 +34,43 @@ $app->post('/create-smartpay-checkout', function (Request $request, Response $re
     $api = new \Smartpay\Api(getenv('PUBLIC_KEY'), getenv('SECRET_KEY'));
     try {
 	$checkoutSession = $api->checkoutSession([
-	    "customerInfo" => [
-		"emailAddress" => "success@smartpay.co",
-	    ],
-	    "orderData" => [
-		"amount" => 250,
-		"currency" => "JPY",
-		"shippingInfo" => [
-		    "address" => [
-			"line1" => "line1",
-			"locality" => "locality",
-			"postalCode" => "123",
-			"country" => "JP"
-		    ],
+	    'items' => [[
+		'name' => 'オリジナルス STAN SMITH',
+		'amount' => 250,
+		'currency' => 'JPY',
+		'quantity' => 1,
+	    ]],
+	    'customer' => [
+		'accountAge' => 20,
+		'email' => 'merchant-support@smartpay.co',
+		'firstName' => '田中',
+		'lastName' => '太郎',
+		'firstNameKana' => 'たなか',
+		'lastNameKana' => 'たろう',
+		'address' => [
+		    'line1' => '北青山 3-6-7',
+		    'line2' => '青山パラシオタワー 11階',
+		    'subLocality' => '',
+		    'locality' => '港区',
+		    'administrativeArea' => '東京都',
+		    'postalCode' => '107-0061',
+		    'country' => 'JP',
 		],
-		"lineItemData" => [[
-		    "priceData" => [
-			"productData" => [
-			    "name" => "レブロン 18 LOW",
-			],
-			"amount" => 250,
-			"currency" => "JPY",
-		    ],
-		    "quantity" => 1
-		]]
+		'dateOfBirth' => '1985-06-30',
+		'gender' => 'male',
 	    ],
-	    "reference" => "order_ref_1234567",
-	    "successUrl" => "https://docs.smartpay.co/example-pages/checkout-successful",
-	    "cancelUrl" => "https://docs.smartpay.co/example-pages/checkout-canceled"
+	    'shipping' => [
+		'line1' => '北青山 3-6-7',
+		'line2' => '青山パラシオタワー 11階',
+		'subLocality' => '',
+		'locality' => '港区',
+		'administrativeArea' => '東京都',
+		'postalCode' => '107-0061',
+		'country' => 'JP',
+	    ],
+	    'reference' => 'order_ref_1234567',
+	    'successURL' => 'https://docs.smartpay.co/example-pages/checkout-successful',
+	    'cancelURL' => 'https://docs.smartpay.co/example-pages/checkout-canceled'
 	]);
     } catch (Exception $e) {
 	echo \GuzzleHttp\Psr7\Message::toString($e->getResponse());
