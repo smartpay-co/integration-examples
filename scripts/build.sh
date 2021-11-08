@@ -48,6 +48,8 @@ for FE_DIR in client/* ; do
         cat scripts/README-INSTALL-PYTHON.md >> ${COMB_DIR}/README.md
       elif [[ "$BE" == "ruby" ]]; then
         cat scripts/README-INSTALL-RUBY.md >> ${COMB_DIR}/README.md
+      elif [[ "$BE" == "php" ]]; then
+        cat scripts/README-INSTALL-PHP.md >> ${COMB_DIR}/README.md
       fi
 
       # new lines
