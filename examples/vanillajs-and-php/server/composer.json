@@ -1,12 +1,6 @@
 {
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/szupingwang/code/sdk-php"
-        }
-    ],
     "require": {
-        "smartpay-co/sdk-php": "@dev",
+        "smartpay-co/sdk-php": "0.0.1",
         "slim/slim": "3.*"
     }
 }
