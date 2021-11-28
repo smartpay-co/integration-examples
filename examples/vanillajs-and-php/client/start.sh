@@ -1,0 +1,1 @@
+node build.js && npx serve -p 3080 build
