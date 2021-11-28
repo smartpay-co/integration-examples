@@ -1,4 +1,21 @@
-### PHP v7.0+ with bundler installed
+### PHP v5.6+ with bundler installed
+
+We recommend the version between 5.6 to 8.0 (v8.0.13 at the time of writing).
+
+#### Install PHP 8.0
+
+**MacOS**
+
+We recommend using [Homebrew](https://brew.sh/).
+
+```shell
+brew install php@8.0
+brew link php@8.0
+```
+
+**Windows**
+
+Download from [https://windows.php.net/download#php-8.0](https://windows.php.net/download#php-8.0).
 
 #### Install Composer
 
