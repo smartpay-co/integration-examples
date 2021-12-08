@@ -58,6 +58,9 @@ def create_smartpay_checkout():
             "locality": 'locality',
             "postalCode": '123',
             "country": 'JP',
+            "feeAmount": 150,
+            "feeCurrency": 'JPY',
+
         },
         "reference": 'order_ref_1234567',
         "successURL": 'https://docs.smartpay.co/example-pages/checkout-successful',
