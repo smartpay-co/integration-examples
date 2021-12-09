@@ -43,6 +43,8 @@ const checkout = () => {
       administrativeArea: '東京都',
       postalCode: '107-0061',
       country: 'JP',
+      feeAmount: 150,
+      feeCurrency: 'JPY',
     },
     // Your internal reference of the order
     reference: 'order_ref_1234567',
