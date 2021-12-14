@@ -6,3 +6,6 @@ package-lock.json
 # virtualenv
 smartpay-env
 **/build/client.js
+
+# php
+vendor
