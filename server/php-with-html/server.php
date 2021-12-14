@@ -44,6 +44,8 @@ $app->map(['get', 'post'], '/', function ($request, $response, $args) {
                     'administrativeArea' => '東京都',
                     'postalCode' => '107-0061',
                     'country' => 'JP',
+                    'feeAmount' => 0,
+                    'feeCurrency' => 'JPY',
                 ],
                 'reference' => 'order_ref_1234567',
                 'successURL' => 'https://docs.smartpay.co/example-pages/checkout-successful',
@@ -58,12 +60,12 @@ $app->map(['get', 'post'], '/', function ($request, $response, $args) {
         $filePath = __DIR__ . '/../client/build/' . $fileName;
 
         switch (pathinfo($filePath, PATHINFO_EXTENSION)) {
-        case 'css':
-            $mimeType = 'text/css';
-            break;
+            case 'css':
+                $mimeType = 'text/css';
+                break;
 
-        default:
-            $mimeType = 'text/html';
+            default:
+                $mimeType = 'text/html';
         }
 
         $body = $response->getBody();
