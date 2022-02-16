@@ -1,6 +1,6 @@
 {
-    "require": {
-        "smartpay-co/sdk-php": "0.1.*",
-        "slim/slim": "3.*"
-    }
+  "require": {
+    "smartpay-co/sdk-php": "0.2.*",
+    "slim/slim": "3.*"
+  }
 }

@@ -26,15 +26,17 @@ def create_smartpay_checkout():
     CALLBACK_URL_PREFIX = request.headers['referer']
 
     session = smartpay.create_checkout_session({
+        "amount": 400,
+        "currency": 'JPY',
         "items": [
             {
                 "name": 'オリジナルス STAN SMITH',
-                "price": 250,
+                "amount": 250,
                 "currency": 'JPY',
                 "quantity": 1,
             },
         ],
-        "customer": {
+        "customerInfo": {
             "accountAge": 35,
             "email": 'merchant-support@smartpay.co',
             "firstName": 'かおる',
@@ -53,17 +55,19 @@ def create_smartpay_checkout():
             "dateOfBirth": '1970-06-30',
             "gender": 'male',
         },
-        "shipping": {
-            "line1": 'line1',
-            "locality": 'locality',
-            "postalCode": '123',
-            "country": 'JP',
+        "shippingInfo": {
+            "address": {
+                "line1": 'line1',
+                "locality": 'locality',
+                "postalCode": '123',
+                "country": 'JP',
+            },
             "feeAmount": 150,
             "feeCurrency": 'JPY',
         },
         "reference": 'order_ref_1234567',
-        "successURL": 'https://docs.smartpay.co/example-pages/checkout-successful',
-        "cancelURL": 'https://docs.smartpay.co/example-pages/checkout-canceled',
+        "successUrl": 'https://docs.smartpay.co/example-pages/checkout-successful',
+        "cancelUrl": 'https://docs.smartpay.co/example-pages/checkout-canceled',
     })
 
     return redirect(session['checkoutURL'], 303)

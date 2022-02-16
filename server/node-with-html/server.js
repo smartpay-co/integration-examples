@@ -28,6 +28,8 @@ app.post('/create-smartpay-checkout', async (req, res) => {
 
   // Generate the payload for checkout session
   const payload = {
+    amount: 400,
+    currency: 'JPY',
     items: [
       {
         name: 'オリジナルス STAN SMITH',
@@ -36,7 +38,7 @@ app.post('/create-smartpay-checkout', async (req, res) => {
         quantity: 1,
       },
     ],
-    customer: {
+    customerInfo: {
       accountAge: 35,
       email: 'merchant-support@smartpay.co',
       firstName: 'かおる',
@@ -55,22 +57,24 @@ app.post('/create-smartpay-checkout', async (req, res) => {
       dateOfBirth: '1970-06-30',
       gender: 'male',
     },
-    shipping: {
-      line1: '北青山 3-6-7',
-      line2: '青山パラシオタワー 11階',
-      subLocality: '',
-      locality: '港区',
-      administrativeArea: '東京都',
-      postalCode: '107-0061',
-      country: 'JP',
+    shippingInfo: {
+      address: {
+        line1: '北青山 3-6-7',
+        line2: '青山パラシオタワー 11階',
+        subLocality: '',
+        locality: '港区',
+        administrativeArea: '東京都',
+        postalCode: '107-0061',
+        country: 'JP',
+      },
       feeAmount: 150,
       feeCurrency: 'JPY',
     },
     // Your internal reference of the order
     reference: 'order_ref_1234567',
     // Callback URLs
-    successURL: 'https://docs.smartpay.co/example-pages/checkout-successful',
-    cancelURL: 'https://docs.smartpay.co/example-pages/checkout-canceled',
+    successUrl: 'https://docs.smartpay.co/example-pages/checkout-successful',
+    cancelUrl: 'https://docs.smartpay.co/example-pages/checkout-canceled',
   };
 
   const session = await smartpay.createCheckoutSession(payload);
