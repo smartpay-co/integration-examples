@@ -33,7 +33,7 @@ const main = async function () {
 
   runAll(['client', 'server'], {
     parallel: true,
-    stdout: process.stdout,
+    stdout: process.stderr,
     stderr: process.stderr,
     printName: true,
     printLabel: true,

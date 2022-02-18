@@ -8,6 +8,8 @@ const smartpay = new Smartpay(PUBLIC_KEY);
 const checkout = () => {
   // Generate the payload for checkout session
   const payload = {
+    amount: 400,
+    currency: 'JPY',
     items: [
       {
         name: 'オリジナルス STAN SMITH',
@@ -16,7 +18,7 @@ const checkout = () => {
         quantity: 1,
       },
     ],
-    customer: {
+    customerInfo: {
       accountAge: 20,
       email: 'merchant-support@smartpay.co',
       firstName: '田中',
@@ -35,22 +37,24 @@ const checkout = () => {
       dateOfBirth: '1985-06-30',
       gender: 'male',
     },
-    shipping: {
-      line1: '北青山 3-6-7',
-      line2: '青山パラシオタワー 11階',
-      subLocality: '',
-      locality: '港区',
-      administrativeArea: '東京都',
-      postalCode: '107-0061',
-      country: 'JP',
+    shippingInfo: {
+      address: {
+        line1: '北青山 3-6-7',
+        line2: '青山パラシオタワー 11階',
+        subLocality: '',
+        locality: '港区',
+        administrativeArea: '東京都',
+        postalCode: '107-0061',
+        country: 'JP',
+      },
       feeAmount: 150,
       feeCurrency: 'JPY',
     },
     // Your internal reference of the order
     reference: 'order_ref_1234567',
     // Callback URLs
-    successURL: 'https://docs.smartpay.co/example-pages/checkout-successful',
-    cancelURL: 'https://docs.smartpay.co/example-pages/checkout-canceled',
+    successUrl: 'https://docs.smartpay.co/example-pages/checkout-successful',
+    cancelUrl: 'https://docs.smartpay.co/example-pages/checkout-canceled',
   };
 
   fetch('http://127.0.0.1:5000/create-smartpay-checkout', {

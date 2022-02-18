@@ -11,13 +11,15 @@ $app->map(['get', 'post'], '/', function ($request, $response, $args) {
         $api = new \Smartpay\Api(getenv('PUBLIC_KEY'), getenv('SECRET_KEY'));
         try {
             $checkoutSession = $api->checkoutSession([
+                'amount' => 400,
+                'currency' => 'JPY',
                 'items' => [[
                     'name' => 'オリジナルス STAN SMITH',
                     'amount' => 250,
                     'currency' => 'JPY',
                     'quantity' => 1,
                 ]],
-                'customer' => [
+                'customerInfo' => [
                     'accountAge' => 20,
                     'email' => 'merchant-support@smartpay.co',
                     'firstName' => '田中',
@@ -36,22 +38,26 @@ $app->map(['get', 'post'], '/', function ($request, $response, $args) {
                     'dateOfBirth' => '1985-06-30',
                     'gender' => 'male',
                 ],
-                'shipping' => [
-                    'line1' => '北青山 3-6-7',
-                    'line2' => '青山パラシオタワー 11階',
-                    'subLocality' => '',
-                    'locality' => '港区',
-                    'administrativeArea' => '東京都',
-                    'postalCode' => '107-0061',
-                    'country' => 'JP',
-                    'feeAmount' => 0,
+                'shippingInfo' => [
+                    'address' => [
+                        'line1' => '北青山 3-6-7',
+                        'line2' => '青山パラシオタワー 11階',
+                        'subLocality' => '',
+                        'locality' => '港区',
+                        'administrativeArea' => '東京都',
+                        'postalCode' => '107-0061',
+                        'country' => 'JP',
+                    ],
+                    'feeAmount' => 150,
                     'feeCurrency' => 'JPY',
                 ],
                 'reference' => 'order_ref_1234567',
-                'successURL' => 'https://docs.smartpay.co/example-pages/checkout-successful',
-                'cancelURL' => 'https://docs.smartpay.co/example-pages/checkout-canceled'
+                'successUrl' => 'https://docs.smartpay.co/example-pages/checkout-successful',
+                'cancelUrl' => 'https://docs.smartpay.co/example-pages/checkout-canceled'
             ]);
         } catch (Exception $e) {
+            echo $e;
+
             echo \GuzzleHttp\Psr7\Message::toString($e->getResponse());
         }
 
