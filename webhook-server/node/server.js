@@ -7,7 +7,7 @@ const base62 = require('base-x')(BASE62);
 
 const app = express();
 
-const secret = 'MgUfJaMacS7r5JxGxdqFiZ1hpGY9a5lZcVQZDo6s';
+const secret = 'YOUR_SIGNING_KEY';
 
 app.use(
   express.json({

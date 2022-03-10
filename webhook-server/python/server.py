@@ -5,7 +5,7 @@ from flask import Flask, request
 
 BASE62 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
-secret = 'MgUfJaMacS7r5JxGxdqFiZ1hpGY9a5lZcVQZDo6s'
+secret = 'YOUR_SIGNING_KEY'
 
 app = Flask(__name__, static_url_path='')
 
