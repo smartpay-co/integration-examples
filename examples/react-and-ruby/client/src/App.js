@@ -1,10 +1,6 @@
 import Smartpay from '@smartpay/sdk-web';
 import './App.css';
 
-const PUBLIC_KEY = process.env.REACT_APP_PUBLIC_KEY || '<YOUR_PUBLIC_KEY>';
-
-const smartpay = new Smartpay(PUBLIC_KEY);
-
 const checkout = () => {
   // Generate the payload for checkout session
   const payload = {
@@ -57,7 +53,7 @@ const checkout = () => {
     cancelUrl: 'https://docs.smartpay.co/example-pages/checkout-canceled',
   };
 
-  fetch('http://127.0.0.1:5000/create-smartpay-checkout', {
+  fetch('http://127.0.0.1:5001/create-smartpay-checkout', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -67,7 +63,7 @@ const checkout = () => {
   })
     .then((res) => res.json())
     .then((session) => {
-      smartpay.launchCheckout(session);
+      Smartpay.launchCheckout(session);
     });
 };
 

@@ -11,10 +11,10 @@ composer install
 Run Slim application with the command:
 
 ```sheel
-php -S 127.0.0.1:5000 server.php
+php -S 127.0.0.1:5001 server.php
 ```
 
-Visit http://localhost:5000/
+Visit http://localhost:5001/
 
 Click the `checkout` button on the page to be redirected to Smartpay's Checkout.
 
