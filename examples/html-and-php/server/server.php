@@ -8,7 +8,7 @@ $app->map(['get', 'post'], '/', function ($request, $response, $args) {
     $fileName = trim($request->getUri()->getBasePath(), '/');
 
     if ($request->isPost()) {
-        $api = new \Smartpay\Api(getenv('PUBLIC_KEY'), getenv('SECRET_KEY'));
+        $api = new \Smartpay\Api(getenv('SECRET_KEY'), getenv('PUBLIC_KEY'));
         try {
             $checkoutSession = $api->checkoutSession([
                 'amount' => 400,

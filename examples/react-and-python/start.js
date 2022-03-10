@@ -62,7 +62,7 @@ const main = async function () {
         borderColor: 'green',
       })
     );
-  }, 5000);
+  }, 5001);
 };
 
 main();

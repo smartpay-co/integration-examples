@@ -8,7 +8,8 @@ end
 
 PUBLIC_DIR = File.join(File.dirname(__FILE__), '../client/build')
 
-set :port, 5000
+set :bind, '0.0.0.0'
+set :port, 5001
 set :public_folder, PUBLIC_DIR
 
 get '/' do
