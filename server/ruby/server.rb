@@ -7,7 +7,8 @@ Smartpay.configure do |config|
   config.secret_key = ENV['SECRET_KEY']
 end
 
-set :port, 5000
+set :bind, '0.0.0.0'
+set :port, 5001
 set :allow_origin, "*"
 set :allow_methods, "GET, PUT, POST, DELETE, OPTIONS"
 set :allow_headers, "Authorization, Content-Type, Accept"

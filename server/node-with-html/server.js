@@ -79,7 +79,7 @@ app.post('/create-smartpay-checkout', async (req, res) => {
 
   const session = await smartpay.createCheckoutSession(payload);
 
-  res.redirect(303, session.checkoutURL);
+  res.redirect(303, session.url);
 });
 
 /**
@@ -93,6 +93,6 @@ app.get('/payment-canceled', async (req, res) => {
   res.sendFile('payment-canceled.html', { root });
 });
 
-app.listen(5000, '127.0.0.1', () =>
-  console.log('Node server listening on port 5000!')
+app.listen(5001, '127.0.0.1', () =>
+  console.log('Node server listening on port 5001!')
 );

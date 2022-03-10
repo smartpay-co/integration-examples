@@ -70,7 +70,7 @@ def create_smartpay_checkout():
         "cancelUrl": 'https://docs.smartpay.co/example-pages/checkout-canceled',
     })
 
-    return redirect(session['checkoutURL'], 303)
+    return redirect(session['url'], 303)
 
 
 @ app.route("/payment-success")

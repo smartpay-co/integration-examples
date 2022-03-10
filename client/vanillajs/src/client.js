@@ -1,5 +1,3 @@
-const smartpay = new Smartpay('<YOUR_PUBLIC_KEY>');
-
 const checkout = () => {
   const payload = {
     amount: 400,
@@ -51,7 +49,7 @@ const checkout = () => {
     cancelUrl: 'https://docs.smartpay.co/example-pages/checkout-canceled',
   };
 
-  fetch('http://127.0.0.1:5000/create-smartpay-checkout', {
+  fetch('http://127.0.0.1:5001/create-smartpay-checkout', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -61,7 +59,7 @@ const checkout = () => {
   })
     .then((res) => res.json())
     .then((session) => {
-      smartpay.launchCheckout(session);
+      Smartpay.launchCheckout(session);
     });
 };
 
