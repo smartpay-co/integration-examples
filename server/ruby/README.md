@@ -33,7 +33,7 @@ Run Sinatra application with the command:
 ruby server.rb
 ```
 
-Visit http://localhost:5000/smartpays
+Visit http://localhost:5001/smartpays
 
 Click the `checkout` button on the page to be redirected to Smartpay's Checkout.
 
