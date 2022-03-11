@@ -3,7 +3,7 @@ require 'base_x'
 
 set :port, 3000
 
-secret = 'MgUfJaMacS7r5JxGxdqFiZ1hpGY9a5lZcVQZDo6s'
+secret = 'YOUR_SIGNING_KEY'
 
 helpers do
   def request_headers
