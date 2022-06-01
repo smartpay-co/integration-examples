@@ -2,6 +2,7 @@ node_modules
 *.lock
 package-lock.json
 .DS_Store
+.idea
 
 # virtualenv
 smartpay-env
@@ -9,3 +10,4 @@ smartpay-env
 
 # php
 vendor
+
