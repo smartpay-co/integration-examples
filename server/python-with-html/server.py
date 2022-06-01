@@ -78,9 +78,9 @@ def payment_success():
     return send_from_directory(root, 'payment-success.html')
 
 
-@ app.route("/payment-cancel")
+@ app.route("/payment-canceled")
 def payment_cancel():
-    return send_from_directory(root, 'payment-cancel.html')
+    return send_from_directory(root, 'payment-canceled.html')
 
 
 @ app.route("/<path>")
