@@ -7,6 +7,7 @@ The following assumes the dev envioronment is on MacOS.
 - Nodejs v14+
 - jq (`brew install jq`)
 - sponge (`brew install moreutils`)
+- Java 11+ (for Java examples)
 
 ## Get started with the examples
 
