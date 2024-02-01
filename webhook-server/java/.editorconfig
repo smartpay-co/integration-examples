@@ -1,6 +1,0 @@
-root = true
-
-[*.{kts,java}]
-indent_style = space
-indent_size = 2
-ij_continuation_indent_size = 2
