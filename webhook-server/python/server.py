@@ -26,7 +26,7 @@ def webhooks():
     print(request.json)
     print(calculated_signature)
 
-    if signature == calculated_signature:
+    if signature and signature == calculated_signature:
         return ''
 
     return '', 400

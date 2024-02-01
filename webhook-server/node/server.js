@@ -38,7 +38,7 @@ app.post('/webhooks', async (req, res, next) => {
   console.log(event);
   console.log(calculatedSignature);
 
-  if (signature === calculatedSignature) {
+  if (signature && signature === calculatedSignature) {
     res.send('');
 
     return;

@@ -32,7 +32,7 @@ post '/webhooks' do
   p body
   p calculated_signature
 
-  if signature == calculated_signature
+  if signature && signature == calculated_signature
     return '', 200
   end
 

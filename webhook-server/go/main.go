@@ -13,7 +13,7 @@ func webhook(w http.ResponseWriter, r *http.Request) {
 	signature := r.Header.Get("Smartpay-Signature")
 	calculatedSignature := r.Header.Get("Calculated-Signature")
 
-	if signature != calculatedSignature {
+	if signature == "" || signature != calculatedSignature {
 		log.Println("Signature verification failed.", signature, calculatedSignature)
 		w.WriteHeader(http.StatusBadRequest)
 		return
